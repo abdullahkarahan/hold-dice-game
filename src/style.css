@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #0b2434;
+  padding: 20px;
+  font-family: 'Orbitron', sans-serif;
+}
+.homepage {
+  background: white;
+  padding: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
+}
+
+.homepage-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-img {
+  width: 250px;
+  margin-left: 2em;
+  margin-top: 1em;
+  margin-right: 2em;
+}
+
+.homepage-title {
+  font-size: 3.5rem;
+  word-spacing: 1rem;
+  letter-spacing: 0.5rem;
+  color: #343a40;
+}
+main {
+  background: linear-gradient(
+    90deg,
+    hsla(186, 33%, 94%, 1) 0%,
+    hsla(216, 41%, 79%, 1) 100%
+  );
+  height: 100vh;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+.game-title {
+  font-size: 2.5rem;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+}
+
+.instructions {
+  font-weight: 400;
+  margin-top: 0;
+  text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+}
+
+.dice-container {
+  display: grid;
+  grid-template: auto auto / repeat(5, 1fr);
+  gap: 20px;
+}
+
+.face {
+  display: grid;
+  grid-template-areas:
+    'a . c'
+    'e g f'
+    'd . b';
+
+  flex: 0 0 auto;
+  padding: 10px;
+  width: 70px;
+  height: 70px;
+
+  background-color: #e7e7e7;
+  box-shadow: inset 0 5px white, inset 0 -5px #bbb, inset 5px 0 #d7d7d7,
+    inset -5px 0 #d7d7d7;
+  border-radius: 10%;
+  cursor: pointer;
+}
+
+.dot {
+  display: block;
+  align-self: center;
+  justify-self: center;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #333;
+  box-shadow: inset 0 3px #111, inset 0 -3px #555;
+}
+
+.dot:nth-child(2) {
+  grid-area: b;
+}
+.dot:nth-child(3) {
+  grid-area: c;
+}
+.dot:nth-child(4) {
+  grid-area: d;
+}
+.dot:nth-child(5) {
+  grid-area: e;
+}
+.dot:nth-child(6) {
+  grid-area: f;
+}
+/* This selects the last pip of odd-valued dice (1, 3, 5) and positions the pip in the center */
+.dot:nth-child(odd):last-child {
+  grid-area: g;
+}
+
+.roll-dice,
+.start-game,
+.new-game,
+.play-game {
+  height: 50px;
+  width: 150px;
+  border: none;
+  border-radius: 6px;
+  background-color: #5035ff;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-bottom: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.roll-dice:focus,
+.start-game:focus,
+.play-game:focus,
+.new-game:focus {
+  outline: none;
+}
+
+.roll-dice:active,
+.start-game:active,
+.play-game:active,
+.new-game:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
+.btn {
+  display: flex;
+}
